@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calcolatrice</title>
+</head>
+<body>
+
+    <p style="text-align: center; font-size: 40px;">Calcolatrice di Daniele di vita!</p>
+    <p style="text-align: center; font-size: 20px;">cliccare una delle seguenti opzioni secondo la propia esigenza, dopo di che, scrivere i due numeri da trattare</p>
+
+    <p style="font-size: 20px;">addizione</p>
+    <input type="radio" name="operazione" id="addiz"></input>
+    
+    <p style="font-size: 20px;">sottrazione</p>
+    <input type="radio" name="operazione" id="sottr"></input>
+
+    <p style="font-size: 20px;">moltiplicazione</p>
+    <input type="radio" name="operazione" id="molti"></input>
+
+    <p style="font-size: 20px;">divisione</p>
+    <input type="radio" name="operazione" id="divis"></input>
+    
+    <footer style="margin: 50px;">
+        <p style="font-size: 20px;">numero uno:</p>
+    <input type="text" id="numer1"></input>
+
+    <p style="font-size: 20px;">numero due:</p>
+    <input type="text" id="numer2"></input> <br>
+    <button style="margin-top: 20px;" id="calcola">calcola</button>
+    </footer>
+    <label id="risult" value="0" style="font-size: 50px; padding-left: 130px;"></label>
+
+    <script>
+        var add = document.getElementById("addiz")
+        var sott = document.getElementById("sottr")
+        var mol = document.getElementById("molti")
+        var div = document.getElementById("divis")
+        var somma = 0
+
+        document.getElementById("calcola").onclick = function() {
+
+            var num1 = Number(document.getElementById("numer1").value)
+            var num2 = Number(document.getElementById("numer2").value)
+
+            if(add.checked) {
+                somma = num1 + num2
+            }
+
+            else if(sott.checked) {
+                somma = num1 - num2
+            }
+
+            else if(mol.checked) {
+                somma = num1 * num2
+            }
+
+            else if(div.checked) {
+                somma = num1 / num2
+            }
+
+            else {
+                somma = "selezionare un operando"
+            }
+
+            document.getElementById("risult").innerHTML = "risultato: " + String(somma)
+
+        }
+
+    </script>
+
+</body>
+</html>
