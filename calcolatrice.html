@@ -38,7 +38,7 @@
         var sott = document.getElementById("sottr")
         var mol = document.getElementById("molti")
         var div = document.getElementById("divis")
-        var somma = 0
+        var ris = 0
 
         document.getElementById("calcola").onclick = function() {
 
@@ -46,26 +46,26 @@
             var num2 = Number(document.getElementById("numer2").value)
 
             if(add.checked) {
-                somma = num1 + num2
+                ris = num1 + num2
             }
 
             else if(sott.checked) {
-                somma = num1 - num2
+                ris = num1 - num2
             }
 
             else if(mol.checked) {
-                somma = num1 * num2
+                ris = num1 * num2
             }
 
             else if(div.checked) {
-                somma = num1 / num2
+                ris = num1 / num2
             }
 
             else {
-                somma = "selezionare un operando"
+                ris = "selezionare un operando"
             }
 
-            document.getElementById("risult").innerHTML = "risultato: " + String(somma)
+            document.getElementById("risult").innerHTML = "risultato: " + String(ris)
 
         }
 
